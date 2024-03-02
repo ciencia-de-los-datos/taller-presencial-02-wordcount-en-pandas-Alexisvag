@@ -51,7 +51,7 @@ def count_words(dataframe):
 
 def save_output(dataframe, output_filename):
     """Save output to a file."""
-    dataframe.to_csv(output_filename, sep="\t", index=True)
+    dataframe.to_csv(output_filename, sep="\t", index=True, header=False)
 
 
 
@@ -60,11 +60,10 @@ def save_output(dataframe, output_filename):
 # Escriba la función job, la cual orquesta las funciones anteriores.
 #
 def run(input_directory, output_filename):
-    df = load_input("input")
+    df = load_input(input_directory)
     df = clean_text(df)
     df = count_words(df)
-    save_output(df, "output.txt")
-    print(df)
+    save_output(df, output_filename)
 
 
 
