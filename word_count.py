@@ -63,6 +63,7 @@ def run(input_directory, output_filename):
     df = clean_text(df)
     df = count_words(df)
     save_output(df, output_filename)
+    print(df)
 
 
 
